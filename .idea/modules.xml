@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NetActivity.iml" filepath="$PROJECT_DIR$/NetActivity.iml" group="NetActivity" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="NetActivity/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/exchange-rates-android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/exchange-rates-android-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/exchange-rates-android-app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/exchange-rates-android-app.app.iml" />
     </modules>
   </component>
 </project>

@@ -1,12 +1,17 @@
 package com.example.netactivity;
 
 import java.util.List;
+import java.util.Locale;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 // TODO 1. - Aktualne funguje aplikace tak, ze se nacte a zobrazi v listu kody men ze souboru https://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.xml
 // TODO 1. - Cilem je upravit zobrazovani tak aby se zobrazovalo: vlajka statu, nazev meny, kod statu, nazev statu a kurz.
@@ -47,6 +52,9 @@ public class CNBAdapter extends ArrayAdapter<Entry>{
            
             holder = new EntryHolder();
             holder.txtKod = (TextView)row.findViewById(R.id.txtKod);
+            holder.txtCountry = (TextView)row.findViewById(R.id.txtCountry);
+            holder.txtRate = (TextView)row.findViewById(R.id.txtRate);
+            holder.flagImage = (ImageView) row.findViewById(R.id.flagImage);
             
             row.setTag(holder);
         }
@@ -57,12 +65,23 @@ public class CNBAdapter extends ArrayAdapter<Entry>{
        
         Entry entry = data.get(position);
         holder.txtKod.setText(entry.kod);
-        
+        holder.txtRate.setText(entry.rate);
+        holder.txtCountry.setText(entry.country);
+
+        holder.flagImage.setImageResource(this.getContext()
+                        .getResources()
+                        .getIdentifier("flag_" + entry.kod.toLowerCase(Locale.ROOT)
+                                , "drawable"
+                                , context.getPackageName()));
+
         return row;
     }
    
     static class EntryHolder
     {
+        ImageView flagImage;
         TextView txtKod;
+        TextView txtRate;
+        TextView txtCountry;
     }
 }
