@@ -7,9 +7,8 @@
 
     <LinearLayout
         android:id="@+id/frameContainer1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/flag_aud"
         >
 
         <ImageView
@@ -19,13 +18,17 @@
             android:layout_marginTop="1dp"
             android:layout_marginBottom="1dp"
             android:gravity="center_vertical"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"
+            android:src="@drawable/flag_aud"
+            />
 
         <LinearLayout
             android:id="@+id/frameContainer2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
+
 
             <TextView
                 android:id="@+id/txtCountry"
@@ -50,5 +53,24 @@
                 android:gravity="center_vertical" />
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/d"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/cardview_dark_background"
+        android:orientation="vertical">
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_simple"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent">-->
+<!--        </EditText>-->
+<!--        <EditText-->
+<!--            android:id="@+id/dss"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_width="match_parent">-->
+<!--        </EditText>-->
     </LinearLayout>
 </LinearLayout>

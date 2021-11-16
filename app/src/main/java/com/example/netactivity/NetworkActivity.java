@@ -29,6 +29,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 import org.xmlpull.v1.XmlPullParserException;
@@ -209,7 +211,16 @@ public class NetworkActivity extends Activity {
             lv.setAdapter(adapter);
 
             // TODO 4. Při výběru měny z listu spustit novou aktivitu, ve které bude převod z CZK do vybrané měny a naopak
-
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Entry entry = (Entry)adapterView.getItemAtPosition(i);
+                    Intent exchangeActivity = new Intent(getBaseContext(), ExchangeActivity.class);
+                    String entryDataString = entry.kod + " " + entry.rate + " " + entry.country;
+                    exchangeActivity.putExtra("data", entryDataString);
+                    startActivity(exchangeActivity);
+                }
+            });
         }
     }
 
