@@ -216,7 +216,7 @@ public class NetworkActivity extends Activity {
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     Entry entry = (Entry)adapterView.getItemAtPosition(i);
                     Intent exchangeActivity = new Intent(getBaseContext(), ExchangeActivity.class);
-                    String entryDataString = entry.kod + " " + entry.rate + " " + entry.country;
+                    String entryDataString = entry.kod + " " + entry.rate + " " + entry.country + " " + entry.quantity;
                     exchangeActivity.putExtra("data", entryDataString);
                     startActivity(exchangeActivity);
                 }

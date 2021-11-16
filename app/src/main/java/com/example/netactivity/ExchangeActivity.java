@@ -26,6 +26,7 @@ public class ExchangeActivity extends Activity {
     EditText editTextFrom;
     EditText editTextTo;
     float foreignRate;
+    int quantity;
 
     //shared lock on listners
     private boolean isChangingText = true;
@@ -48,6 +49,7 @@ public class ExchangeActivity extends Activity {
         editTextFrom = (EditText)findViewById(R.id.editTextFrom);
         editTextTo = (EditText)findViewById(R.id.editTextTo);
 
+
         //Setting values of UI components
         code.setText(dataStringArray[0]);
         rate.setText(dataStringArray[1]);
@@ -58,10 +60,11 @@ public class ExchangeActivity extends Activity {
                         , "drawable"
                         , getBaseContext().getPackageName()));
 
-//        Toast.makeText( getBaseContext(),dataString, Toast.LENGTH_LONG).show();
+        quantity = Integer.parseInt(dataStringArray[3]);
 
         try{
             foreignRate = Float.parseFloat(dataStringArray[1].replace(',','.'));
+            foreignRate/=quantity;
         }catch (Exception e) {
             e.printStackTrace();
         }

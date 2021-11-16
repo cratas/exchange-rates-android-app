@@ -72,6 +72,7 @@ public class CNBXmlParser {
         String kod = null;
         String country = null;
         String rate = null;
+        String mnozstvi = null;
         
         Log.d("readEntry","START");
 
@@ -90,12 +91,14 @@ public class CNBXmlParser {
                     rate = parser.getAttributeValue(i);
                 } else if(parser.getAttributeName(i).equals("zeme")) {
                     country = parser.getAttributeValue(i);
+                } else if(parser.getAttributeName(i).equals("mnozstvi")) {
+                    mnozstvi = parser.getAttributeValue(i);
                 }
 
         }
         parser.next();
             
-        return new Entry(kod, country,rate);
+        return new Entry(kod, country,rate, mnozstvi);
     }
   
 }
