@@ -210,7 +210,6 @@ public class NetworkActivity extends Activity {
           
             lv.setAdapter(adapter);
 
-            // TODO 4. Při výběru měny z listu spustit novou aktivitu, ve které bude převod z CZK do vybrané měny a naopak
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
