@@ -5,9 +5,6 @@ public class Entry {
     public String country;
     public String rate;
     public String quantity;
- 
-    // TODO 3. Rozsirit dalsi udaje ve tride, ktere se budou vest pro kazdou menu
-    // TODO 3. To zahrnuje i upraveni konstruktoru
             
     Entry(String kod) {
         this.kod = kod;
